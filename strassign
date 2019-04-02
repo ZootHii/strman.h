@@ -2,7 +2,6 @@
 #include <string.h>
 
 // a function to assign a string to another string, which is safer than strcpy
-
 char *strassign(char *dest, const char *src, int dest_len){
 	
 	int new_len;
