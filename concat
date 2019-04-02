@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_STR_LEN 50
+
+char *strassign(char dest[], const char src[],  int dest_len){
+	
+	int new_len;
+	int len = strlen(src); 
+ 
+
+	if (len < dest_len) 
+		new_len = len; 
+	else
+		new_len = dest_len - 1;
+ 
+ 
+	memmove(dest, src, new_len); 
+  
+	dest[new_len] = '\0'; 
+ 
+	return(dest);
+  
+}
+
+char *concat(char dest[], const char str1[], const char str2[], int dest_len){
+	
+	char result[MAX_STR_LEN];
+
+	if ( dest_len > MAX_STR_LEN && strlen(str1) + strlen(str2) >= MAX_STR_LEN )
+		printf("\nInsufficent local storage causing loss of data!\n");
+		 
+	strassign(result, str1, MAX_STR_LEN); 
+	strncat(result, str2, MAX_STR_LEN - strlen(result) - 1);
+	strassign(dest, result, dest_len); 
+ 
+	return(dest);  
+  
+}
