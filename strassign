@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 char *strassign(char *dest, const char *src, int dest_len){
 	
 	int new_len;
